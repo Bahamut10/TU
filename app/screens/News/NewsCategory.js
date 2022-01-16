@@ -41,6 +41,8 @@ const NewsCategory = ({ item }) => {
   );
 };
 
+const areEqual = (prev, next) => prev.item.id === next.item.id
+
 const styles = StyleSheet.create({
   container: {
     padding: 8,
@@ -51,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo(NewsCategory);
+export default memo(NewsCategory, areEqual);

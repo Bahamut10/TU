@@ -24,6 +24,8 @@ const NewsItem = ({ navigation, item }) => {
   );
 }
 
+const areEqual = (prev, next) => prev.item.id === next.item.id
+
 const styles = StyleSheet.create({
   container: {
     padding: 10,
@@ -44,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo(NewsItem);
+export default memo(NewsItem, areEqual);

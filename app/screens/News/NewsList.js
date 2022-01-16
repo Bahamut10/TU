@@ -32,11 +32,11 @@ const NewsList = ({ navigation }) => {
 
   const renderNewsItem = useCallback(({ item }) => {
     return <NewsItem navigation={navigation} item={item} />;
-  }, []);
+  }, [news]);
 
   const renderCategory = useCallback(({ item }) => {
     return <NewsCategory item={item} />;
-  }, []);
+  }, [categories]);
 
   return (
     <View style={[styles.background]}>
