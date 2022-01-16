@@ -53,7 +53,6 @@ const NewsDetail = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color.primary,
     padding: 10,
   },
   image: {
@@ -64,7 +63,6 @@ const styles = StyleSheet.create({
   },
   loading: {
     flex: 1,
-    backgroundColor: color.primary,
     justifyContent: "center",
   },
   title: {

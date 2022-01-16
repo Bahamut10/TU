@@ -74,7 +74,6 @@ const NewsList = ({ navigation }) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: color.primary,
   },
   categoryContainer: {
     margin: 5,

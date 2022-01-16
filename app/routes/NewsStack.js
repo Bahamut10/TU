@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 
 const NewsStack = () => {
   return (
-    <Stack.Navigator screenOptions={headerOptions}>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen
         name="News List"
         component={NewsList}
@@ -23,7 +23,10 @@ const NewsStack = () => {
   );
 }
 
-const headerOptions = {
+const screenOptions = {
+  cardStyle: {
+    backgroundColor: color.primary
+  },
   headerStyle: {
     backgroundColor: color.primary,
   },
