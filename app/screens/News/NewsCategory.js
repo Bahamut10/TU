@@ -20,10 +20,10 @@ const NewsCategory = ({ item }) => {
     if (category === item.id) {
       return {
         selectedContainer: {
-          backgroundColor: color.secondary,
+          borderColor: color.secondary,
+          backgroundColor: color.gray,
         },
         selectedText: {
-          color: color.primary,
           fontWeight: "bold",
         },
       };
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 5,
     borderWidth: 1,
-    borderColor: color.secondary,
+    borderColor: color.gray,
     borderRadius: 5,
   },
 });
