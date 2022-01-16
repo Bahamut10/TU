@@ -1,5 +1,6 @@
 import * as actionType from "./actionType";
 
+/** NEWS */
 export const setNews = (data) => {
   return {
     type: actionType.SET_NEWS,
@@ -20,14 +21,18 @@ export const refreshNews = (status) => {
     payload: status,
   };
 };
+/** END OF NEWS */
 
+/** NEWS DETAIL */
 export const setNewsDetail = (data) => {
   return {
     type: actionType.SET_NEWS_DETAIL,
     payload: data,
   };
 };
+/** END OF NEWS DETAIL */
 
+/** PAGINATION */
 export const incrementPage = () => {
   return {
     type: actionType.INCREMENT_PAGE,
@@ -39,3 +44,4 @@ export const resetPage = () => {
     type: actionType.RESET_PAGE,
   };
 };
+/** END OF PAGINATION */

@@ -1,3 +1,4 @@
+/** LIBRARIES */
 import React from "react";
 import {
   StyleSheet,
@@ -8,9 +9,12 @@ import {
 import { useSelector } from "react-redux";
 import HTML from "react-native-render-html";
 
+/** COMPONENTS / SCREENS */
 import Loading from "../../components/Loading";
-import NewsDetailLogic from "./NewsDetailLogic";
 import TUText from "../../components/TUText";
+import NewsDetailLogic from "./NewsDetailLogic";
+
+/** UTILITIES */
 import { formatToShortDate } from "../../utils/helper";
 import color from "../../utils/color";
 
@@ -42,7 +46,7 @@ const NewsDetail = ({ route }) => {
     );
   }
   return <Loading style={styles.loading} />;
-}
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,7 @@
+/** LIBRARIES */
 import _ from "lodash";
 
+/** ACTION TYPE */
 import * as actionType from "../actions/actionType";
 
 export const newsReducer = (state = [], action) => {

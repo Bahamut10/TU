@@ -1,5 +1,6 @@
 import { Alert } from "react-native";
 
+/** TO FORMAT DATES TO "DAY, DATE MONTH YEAR" IN BAHASA */
 export const formatDatetoIndonesia = (sourceDate) => {
   var dd = new Date(sourceDate);
   var year = dd.getFullYear();
@@ -73,6 +74,7 @@ export const formatDatetoIndonesia = (sourceDate) => {
   return display;
 };
 
+/** TO FORMAT DATE TO YEAR/MONTH/DATE */
 export const formatToShortDate = (sourceDate) => {
   const dd = sourceDate.split("T")[0];
   const date = dd.replace(/-/g, "/");
@@ -80,6 +82,7 @@ export const formatToShortDate = (sourceDate) => {
   return date;
 };
 
+/** TO ALERT BASED ON PASSED TITLE & MESSAGE */
 export const alert = (title, message) => {
   Alert.alert(title, message, [
     { text: "OK", onPress: () => console.log("OK Pressed") },

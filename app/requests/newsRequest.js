@@ -18,7 +18,7 @@ export const getAllNews = (page) => {
   });
 }
 
-export const getAllCategories = (page) => {
+export const getAllCategories = () => {
   return new Promise(async (resolve, reject) => {
     client
       .get("/news/news_categories")

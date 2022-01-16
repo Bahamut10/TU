@@ -1,6 +1,8 @@
+/** LIBRARIES */
 import React from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
+/** UTILITIES */
 import color from "../utils/color";
 
 function Loading({ style }) {

@@ -1,22 +1,28 @@
-import { Alert, BackHandler } from "react-native";
+/** LIBRARIES */
+import { BackHandler } from "react-native";
 import { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+/** REDUX */
+import {
+  emptyCategories,
+  setCategories,
+} from "../../redux/actions/categoryAction";
 import {
   resetPage,
   setNews,
   emptyNews,
   refreshNews,
 } from "../../redux/actions/newsAction";
-import {
-  emptyCategories,
-  setCategories,
-} from "../../redux/actions/categoryAction";
+
+/** REQUESTS */
 import {
   getAllNews,
   getAllCategories,
   getNewsByCategory,
 } from "../../requests/newsRequest";
+
+/** UTILITIES */
 import { alert } from "../../utils/helper";
 
 const NewsListLogic = (navigation) => {
@@ -103,6 +109,6 @@ const NewsListLogic = (navigation) => {
   };
 
   return { isAllDataLoaded };
-}
+};
 
 export default NewsListLogic;

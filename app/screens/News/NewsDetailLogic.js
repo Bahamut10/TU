@@ -1,7 +1,11 @@
+/** LIBRARIES */
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
+/** REDUX */
 import { setNewsDetail } from "../../redux/actions/newsAction";
+
+/** REQUESTS */
 import { getNewsById } from "../../requests/newsRequest";
 
 const NewsDetailLogic = (id) => {
@@ -24,6 +28,6 @@ const NewsDetailLogic = (id) => {
         console.log(err);
       });
   };
-}
+};
 
 export default NewsDetailLogic;

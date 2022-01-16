@@ -1,4 +1,7 @@
+/** LIBRARIES */
 import axios from "axios";
+
+/** ENV */
 import { BASE_URL } from "@env";
 
 const config = {

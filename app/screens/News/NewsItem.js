@@ -1,7 +1,11 @@
+/** LIBRARIES */
 import React, { memo } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
+/** COMPONENTS / SCREENS */
 import TUText from "../../components/TUText";
+
+/** UTILITIES */
 import { formatDatetoIndonesia } from "../../utils/helper";
 
 const NewsItem = ({ navigation, item }) => {

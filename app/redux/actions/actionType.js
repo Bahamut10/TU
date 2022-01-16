@@ -1,9 +1,14 @@
-export const SET_NEWS = "SET_NEWS";
-export const EMPTY_NEWS = "EMPTY_NEWS";
-export const REFRESH_NEWS = "REFRESH_NEWS";
-export const SET_NEWS_DETAIL = "SET_NEWS_DETAIL";
-export const SET_CATEGORIES = "SET_CATEGORIES";
+/** CATEGORIES */
 export const EMPTY_CATEGORIES = "EMPTY_CATEGORIES";
+export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_CATEGORY = "SET_CATEGORY";
+/** END OF CATEGORIES */
+
+/** NEWS */
+export const EMPTY_NEWS = "EMPTY_NEWS";
 export const INCREMENT_PAGE = "INCREMENT_PAGE";
+export const REFRESH_NEWS = "REFRESH_NEWS";
 export const RESET_PAGE = "RESET_PAGE";
+export const SET_NEWS = "SET_NEWS";
+export const SET_NEWS_DETAIL = "SET_NEWS_DETAIL";
+/** END OF NEWS */

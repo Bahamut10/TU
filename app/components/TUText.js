@@ -1,6 +1,8 @@
+/** LIBRARIES */
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+/** UTILITIES */
 import color from '../utils/color';
 
 function TUText(props) {

@@ -1,13 +1,19 @@
+/** LIBRARIES */
 import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { View, FlatList, StyleSheet, RefreshControl } from "react-native";
 
+/** COMPONENTS / SCREENS */
+import Loading from "../../components/Loading";
 import NewsListLogic from "./NewsListLogic";
 import NewsItem from "./NewsItem";
 import NewsCategory from "./NewsCategory";
-import Loading from "../../components/Loading";
-import color from "../../utils/color";
+
+/** REDUX */
 import { incrementPage, refreshNews } from "../../redux/actions/newsAction";
+
+/** UTILITIES */
+import color from "../../utils/color";
 
 const NewsList = ({ navigation }) => {
   const { isAllDataLoaded } = NewsListLogic(navigation);
@@ -61,7 +67,7 @@ const NewsList = ({ navigation }) => {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   background: {

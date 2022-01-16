@@ -1,14 +1,17 @@
+/** LIBRARIES */
 import { combineReducers } from "redux";
-import * as newsReducer from "./newsReducer";
+
+/** REDUCERS */
 import * as categoryReducer from "./categoryReducer";
+import * as newsReducer from "./newsReducer";
 
 const allReducers = combineReducers({
-  news: newsReducer.newsReducer,
-  refresh: newsReducer.refreshNewsReducer,
-  detail: newsReducer.newsDetailReducer,
-  page: newsReducer.pageReducer,
   categories: categoryReducer.categoriesReducer,
   category: categoryReducer.categoryReducer,
+  news: newsReducer.newsReducer,
+  detail: newsReducer.newsDetailReducer,
+  page: newsReducer.pageReducer,
+  refresh: newsReducer.refreshNewsReducer,
 });
 
 export default allReducers;

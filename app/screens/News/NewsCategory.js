@@ -1,9 +1,15 @@
+/** LIBRARIES */
 import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
-import { setCategory } from "../../redux/actions/categoryAction";
+/** COMPONENTS / SCREENS */
 import TUText from "../../components/TUText";
+
+/** REDUX */
+import { setCategory } from "../../redux/actions/categoryAction";
+
+/** UTILITIES */
 import color from "../../utils/color";
 
 const NewsCategory = ({ item }) => {
@@ -33,7 +39,7 @@ const NewsCategory = ({ item }) => {
       <TUText style={isSelected()?.selectedText}>{item.name}</TUText>
     </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
