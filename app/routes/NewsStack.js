@@ -6,7 +6,7 @@ import color from "../utils/color";
 
 const Stack = createStackNavigator();
 
-function NewsStack() {
+const NewsStack = () => {
   return (
     <Stack.Navigator screenOptions={headerOptions}>
       <Stack.Screen

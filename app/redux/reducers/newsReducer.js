@@ -9,9 +9,18 @@ export const newsReducer = (state = [], action) => {
 
       /** This line is to solve data duplication problem in Back End data response */
       return _.uniqBy(newData, "id");
-
     case actionType.EMPTY_NEWS:
       return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const refreshNewsReducer = (state = false, action) => {
+  switch (action.type) {
+    case actionType.REFRESH_NEWS:
+      return action.payload;
+
     default:
       return state;
   }

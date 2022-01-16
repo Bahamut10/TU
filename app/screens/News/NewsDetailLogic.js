@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { setNewsDetail } from "../../redux/actions/newsAction";
 import { getNewsById } from "../../requests/newsRequest";
 
-function NewsDetailLogic(id) {
+const NewsDetailLogic = (id) => {
   const dispatch = useDispatch();
 
   useEffect(() => {

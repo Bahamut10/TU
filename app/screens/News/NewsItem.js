@@ -4,7 +4,7 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import TUText from "../../components/TUText";
 import { formatDatetoIndonesia } from "../../utils/helper";
 
-function NewsItem({ navigation, item }) {
+const NewsItem = ({ navigation, item }) => {
   return (
     <TouchableOpacity
       key={item.id}

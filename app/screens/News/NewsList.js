@@ -1,24 +1,28 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { View, FlatList, StyleSheet, ActivityIndicator } from "react-native";
+import { View, FlatList, StyleSheet, RefreshControl } from "react-native";
 
 import NewsListLogic from "./NewsListLogic";
 import NewsItem from "./NewsItem";
 import NewsCategory from "./NewsCategory";
 import Loading from "../../components/Loading";
 import color from "../../utils/color";
-import { incrementPage } from "../../redux/actions/newsAction";
+import { incrementPage, refreshNews } from "../../redux/actions/newsAction";
 
-function NewsList({ navigation }) {
-  NewsListLogic();
+const NewsList = ({ navigation }) => {
+  const { isAllDataLoaded } = NewsListLogic(navigation);
 
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.news);
+  const news = useSelector((state) => state.news);
   const categories = useSelector((state) => state.categories);
+  const refresh = useSelector((state) => state.refresh);
 
-  const renderFooter = useCallback(() => <Loading />, []);
+  const renderFooter = useCallback(() => {
+    if (!isAllDataLoaded) return <Loading />;
+    else return <></>;
+  }, []);
 
-  const renderNewsList = useCallback(({ item }) => {
+  const renderNewsItem = useCallback(({ item }) => {
     return <NewsItem navigation={navigation} item={item} />;
   }, []);
 
@@ -32,16 +36,28 @@ function NewsList({ navigation }) {
         data={categories}
         renderItem={renderCategory}
         keyExtractor={(item) => item.id}
+        contentContainerStyle={[styles.categoryContainer]}
         horizontal={true}
       />
       <FlatList
-        data={[...new Set(data)]}
-        renderItem={renderNewsList}
+        data={[...news]}
+        renderItem={renderNewsItem}
         keyExtractor={(item) => item.id}
+        removeClippedSubviews={true}
         onEndReached={() => dispatch(incrementPage())}
         onEndReachedThreshold={0}
-        ListFooterComponent={renderFooter}
-        // maxToRenderPerBatch={8}
+        ListFooterComponent={!isAllDataLoaded ? renderFooter : <></>}
+        maxToRenderPerBatch={8}
+        initialNumToRender={8}
+        refreshControl={
+          <RefreshControl
+            refreshing={refresh}
+            onRefresh={() => dispatch(refreshNews(true))}
+            title="Pull to refresh"
+            tintColor={color.secondary}
+            titleColor={color.secondary}
+          />
+        }
       />
     </View>
   );
@@ -51,6 +67,10 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     backgroundColor: color.primary,
+  },
+  categoryContainer: {
+    margin: 5,
+    height: 45,
   },
 });
 

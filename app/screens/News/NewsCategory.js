@@ -6,7 +6,7 @@ import { setCategory } from "../../redux/actions/categoryAction";
 import TUText from "../../components/TUText";
 import color from "../../utils/color";
 
-function NewsCategory({ item }) {
+const NewsCategory = ({ item }) => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.category);
 
@@ -18,7 +18,7 @@ function NewsCategory({ item }) {
         },
         selectedText: {
           color: color.primary,
-          fontWeight: "bold"
+          fontWeight: "bold",
         },
       };
     }
@@ -38,8 +38,7 @@ function NewsCategory({ item }) {
 const styles = StyleSheet.create({
   container: {
     padding: 8,
-    height: 35,
-    margin: 10,
+    margin: 5,
     borderWidth: 1,
     borderColor: color.secondary,
     borderRadius: 5,

@@ -1,3 +1,5 @@
+import { Alert } from "react-native";
+
 export const formatDatetoIndonesia = (sourceDate) => {
   var dd = new Date(sourceDate);
   var year = dd.getFullYear();
@@ -76,4 +78,10 @@ export const formatToShortDate = (sourceDate) => {
   const date = dd.replace(/-/g, "/");
 
   return date;
+};
+
+export const alert = (title, message) => {
+  Alert.alert(title, message, [
+    { text: "OK", onPress: () => console.log("OK Pressed") },
+  ]);
 };

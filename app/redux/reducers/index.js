@@ -4,6 +4,7 @@ import * as categoryReducer from "./categoryReducer";
 
 const allReducers = combineReducers({
   news: newsReducer.newsReducer,
+  refresh: newsReducer.refreshNewsReducer,
   detail: newsReducer.newsDetailReducer,
   page: newsReducer.pageReducer,
   categories: categoryReducer.categoriesReducer,

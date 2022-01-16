@@ -1,5 +1,5 @@
-import axios from 'axios';
-import {BASE_URL} from '@env';
+import axios from "axios";
+import { BASE_URL } from "@env";
 
 const config = {
   baseURL: BASE_URL,
@@ -7,12 +7,12 @@ const config = {
 const httpClient = axios.create(config);
 
 httpClient.interceptors.response.use(
-  response => {
+  (response) => {
     return response;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
-  },
+  }
 );
 
-export {httpClient};
+export { httpClient };

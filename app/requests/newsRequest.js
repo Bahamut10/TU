@@ -1,12 +1,12 @@
 import { httpClient as client } from "./client";
 
-export function getAllNews(page) {
+export const getAllNews = (page) => {
   return new Promise(async (resolve, reject) => {
     client
       .get("/news", {
         params: {
           page,
-          limit: 10
+          limit: 10,
         },
       })
       .then((res) => {
@@ -18,7 +18,7 @@ export function getAllNews(page) {
   });
 }
 
-export function getAllCategories(page) {
+export const getAllCategories = (page) => {
   return new Promise(async (resolve, reject) => {
     client
       .get("/news/news_categories")
@@ -31,14 +31,14 @@ export function getAllCategories(page) {
   });
 }
 
-export function getNewsByCategory(page, categoryId) {
+export const getNewsByCategory = (page, categoryId) => {
   return new Promise(async (resolve, reject) => {
     client
       .get(`/news_category/${categoryId}/news`, {
         params: {
           page,
-          limit: 10
-        }
+          limit: 10,
+        },
       })
       .then((res) => {
         resolve(res);
@@ -49,7 +49,7 @@ export function getNewsByCategory(page, categoryId) {
   });
 }
 
-export function getNewsById(newsId) {
+export const getNewsById = (newsId) => {
   return new Promise(async (resolve, reject) => {
     client
       .get(`/news/${newsId}`)

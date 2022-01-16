@@ -14,14 +14,14 @@ import TUText from "../../components/TUText";
 import { formatToShortDate } from "../../utils/helper";
 import color from "../../utils/color";
 
-function NewsDetail({ route }) {
+const NewsDetail = ({ route }) => {
   const { id } = route.params;
   NewsDetailLogic(id);
 
   const { width } = useWindowDimensions();
   const data = useSelector((state) => state.detail);
 
-  if (Object.entries(data).length > 0) {
+  if (data && Object.entries(data).length > 0) {
     const source = {
       html: `
         <div style="color: ${color.secondary}">
@@ -34,7 +34,7 @@ function NewsDetail({ route }) {
       <ScrollView style={[styles.container]}>
         <TUText style={styles.title}>{data.title}</TUText>
         <TUText>
-          Dipublikasikan pada {formatToShortDate(data.published_date)}
+          Terakhir Update {formatToShortDate(data.published_date)}
         </TUText>
         <Image style={[styles.image]} source={{ uri: data.thumbnail_url }} />
         <HTML source={source} contentWidth={width} />
