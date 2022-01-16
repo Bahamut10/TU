@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 /** REDUX */
-import { setNewsDetail } from "../../redux/actions/newsAction";
+import { setNewsDetail } from "../../../redux/actions/newsAction";
 
 /** REQUESTS */
-import { getNewsById } from "../../requests/newsRequest";
+import { getNewsById } from "../../../requests/newsRequest";
 
-const NewsDetailLogic = (id) => {
+export const useNewsDetail = (id) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,5 +29,3 @@ const NewsDetailLogic = (id) => {
       });
   };
 };
-
-export default NewsDetailLogic;

@@ -12,7 +12,9 @@ import HTML from "react-native-render-html";
 /** COMPONENTS / SCREENS */
 import Loading from "../../components/Loading";
 import TUText from "../../components/TUText";
-import NewsDetailLogic from "./NewsDetailLogic";
+
+/** CUSTOM HOOKS */
+import { useNewsDetail } from "./hooks/useNewsDetail";
 
 /** UTILITIES */
 import { formatToShortDate } from "../../utils/helper";
@@ -20,7 +22,7 @@ import color from "../../utils/color";
 
 const NewsDetail = ({ route }) => {
   const { id } = route.params;
-  NewsDetailLogic(id);
+  useNewsDetail(id);
 
   const { width } = useWindowDimensions();
   const data = useSelector((state) => state.detail);

@@ -5,9 +5,11 @@ import { View, FlatList, StyleSheet, RefreshControl } from "react-native";
 
 /** COMPONENTS / SCREENS */
 import Loading from "../../components/Loading";
-import NewsListLogic from "./NewsListLogic";
 import NewsItem from "./NewsItem";
 import NewsCategory from "./NewsCategory";
+
+/** CUSTOM HOOKS */
+import { useNewsList } from "./hooks/useNewsList";
 
 /** REDUX */
 import { incrementPage, refreshNews } from "../../redux/actions/newsAction";
@@ -16,7 +18,7 @@ import { incrementPage, refreshNews } from "../../redux/actions/newsAction";
 import color from "../../utils/color";
 
 const NewsList = ({ navigation }) => {
-  const { isAllDataLoaded } = NewsListLogic(navigation);
+  const { isAllDataLoaded } = useNewsList(navigation);
 
   const dispatch = useDispatch();
   const news = useSelector((state) => state.news);

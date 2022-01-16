@@ -7,25 +7,25 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   emptyCategories,
   setCategories,
-} from "../../redux/actions/categoryAction";
+} from "../../../redux/actions/categoryAction";
 import {
   resetPage,
   setNews,
   emptyNews,
   refreshNews,
-} from "../../redux/actions/newsAction";
+} from "../../../redux/actions/newsAction";
 
 /** REQUESTS */
 import {
   getAllNews,
   getAllCategories,
   getNewsByCategory,
-} from "../../requests/newsRequest";
+} from "../../../requests/newsRequest";
 
 /** UTILITIES */
-import { alert } from "../../utils/helper";
+import { alert } from "../../../utils/helper";
 
-const NewsListLogic = (navigation) => {
+export const useNewsList = (navigation) => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.category);
   const page = useSelector((state) => state.page);
@@ -80,7 +80,7 @@ const NewsListLogic = (navigation) => {
         if (res.data.data.length === 0) setIsAllDataLoaded(true);
         else setIsAllDataLoaded(false);
       })
-      .catch((err) => {
+      .catch(() => {
         alert("Oopss...", "Looks like something went wrong. Please try again.");
       });
   };
@@ -90,7 +90,7 @@ const NewsListLogic = (navigation) => {
       .then((res) => {
         dispatch(setCategories(res.data.data));
       })
-      .catch((err) => {
+      .catch(() => {
         alert("Oopss...", "Looks like something went wrong. Please try again.");
       });
   };
@@ -103,12 +103,10 @@ const NewsListLogic = (navigation) => {
         if (res.data.data.length === 0) setIsAllDataLoaded(true);
         else setIsAllDataLoaded(false);
       })
-      .catch((err) => {
+      .catch(() => {
         alert("Oopss...", "Looks like something went wrong. Please try again.");
       });
   };
 
   return { isAllDataLoaded };
 };
-
-export default NewsListLogic;
