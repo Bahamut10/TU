@@ -1,26 +1,26 @@
 /** LIBRARIES */
 import { BackHandler } from "react-native";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 /** REDUX */
 import {
   emptyCategories,
   setCategories,
-} from "../../../redux/actions/categoryAction";
+} from "@actions/categoryAction";
 import {
   resetPage,
   setNews,
   emptyNews,
   refreshNews,
-} from "../../../redux/actions/newsAction";
+} from "@actions/newsAction";
 
 /** REQUESTS */
 import {
   getAllNews,
   getAllCategories,
   getNewsByCategory,
-} from "../../../requests/newsRequest";
+} from "@requests/newsRequest";
 
 /** UTILITIES */
 import { alert } from "../../../utils/helper";

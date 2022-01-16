@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, FlatList, StyleSheet, RefreshControl } from "react-native";
 
 /** COMPONENTS / SCREENS */
-import Loading from "../../components/Loading";
+import Loading from "@components/Loading";
 import NewsItem from "./NewsItem";
 import NewsCategory from "./NewsCategory";
 
@@ -12,10 +12,10 @@ import NewsCategory from "./NewsCategory";
 import { useNewsList } from "./hooks/useNewsList";
 
 /** REDUX */
-import { incrementPage, refreshNews } from "../../redux/actions/newsAction";
+import { incrementPage, refreshNews } from "@actions/newsAction";
 
 /** UTILITIES */
-import color from "../../utils/color";
+import color from "@utils/color";
 
 const NewsList = ({ navigation }) => {
   const { isAllDataLoaded } = useNewsList(navigation);

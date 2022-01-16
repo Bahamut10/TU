@@ -4,13 +4,13 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 /** COMPONENTS / SCREENS */
-import TUText from "../../components/TUText";
+import TUText from "@components/TUText";
 
 /** REDUX */
-import { setCategory } from "../../redux/actions/categoryAction";
+import { setCategory } from "@actions/categoryAction";
 
 /** UTILITIES */
-import color from "../../utils/color";
+import color from "@utils/color";
 
 const NewsCategory = ({ item }) => {
   const dispatch = useDispatch();

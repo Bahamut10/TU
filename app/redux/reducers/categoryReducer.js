@@ -1,4 +1,4 @@
-import * as actionType from "../actions/actionType";
+import * as actionType from "@actions/actionType";
 
 export const categoriesReducer = (state = [], action) => {
   switch (action.type) {

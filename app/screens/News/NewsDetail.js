@@ -10,15 +10,15 @@ import { useSelector } from "react-redux";
 import HTML from "react-native-render-html";
 
 /** COMPONENTS / SCREENS */
-import Loading from "../../components/Loading";
-import TUText from "../../components/TUText";
+import Loading from "@components/Loading";
+import TUText from "@components/TUText";
 
 /** CUSTOM HOOKS */
 import { useNewsDetail } from "./hooks/useNewsDetail";
 
 /** UTILITIES */
-import { formatToShortDate } from "../../utils/helper";
-import color from "../../utils/color";
+import { formatToShortDate } from "@utils/helper";
+import color from "@utils/color";
 
 const NewsDetail = ({ route }) => {
   const { id } = route.params;

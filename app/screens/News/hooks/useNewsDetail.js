@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 /** REDUX */
-import { setNewsDetail } from "../../../redux/actions/newsAction";
+import { setNewsDetail } from "@actions/newsAction";
 
 /** REQUESTS */
-import { getNewsById } from "../../../requests/newsRequest";
+import { getNewsById } from "@requests/newsRequest";
 
 export const useNewsDetail = (id) => {
   const dispatch = useDispatch();

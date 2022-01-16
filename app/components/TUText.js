@@ -1,23 +1,21 @@
 /** LIBRARIES */
-import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import React from "react";
+import { StyleSheet, Text } from "react-native";
 
 /** UTILITIES */
-import color from '../utils/color';
+import color from "@utils/color";
 
 function TUText(props) {
-  const {children, style} = props
+  const { children, style } = props;
 
-  return (
-    <Text style={[styles.text, {...style}]}>{children}</Text>
-  );
+  return <Text style={[styles.text, { ...style }]}>{children}</Text>;
 }
 
 const styles = StyleSheet.create({
   text: {
     color: color.secondary,
     // flexShrink: 1
-  }
-})
+  },
+});
 
 export default TUText;
