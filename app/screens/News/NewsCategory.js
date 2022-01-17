@@ -1,8 +1,8 @@
 /** LIBRARIES */
 import React, { memo } from "react";
-import PropTypes from "prop-types";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 /** COMPONENTS / SCREENS */
 import TUText from "@components/TUText";

@@ -1,7 +1,7 @@
 /** LIBRARIES */
 import React, { memo } from "react";
-import PropTypes from "prop-types";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import PropTypes from "prop-types";
 
 /** COMPONENTS / SCREENS */
 import TUText from "@components/TUText";

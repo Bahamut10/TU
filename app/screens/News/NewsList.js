@@ -1,8 +1,8 @@
 /** LIBRARIES */
 import React, { useCallback } from "react";
-import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { View, FlatList, StyleSheet, RefreshControl } from "react-native";
+import PropTypes from "prop-types";
 
 /** COMPONENTS / SCREENS */
 import Loading from "@components/Loading";

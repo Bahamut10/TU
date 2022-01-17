@@ -6,9 +6,9 @@ import {
   useWindowDimensions,
   Image,
 } from "react-native";
-import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import HTML from "react-native-render-html";
+import PropTypes from "prop-types";
 
 /** COMPONENTS / SCREENS */
 import Loading from "@components/Loading";
