@@ -33,7 +33,3 @@ export const useNewsDetail = (id) => {
       });
   };
 };
-
-useNewsDetail.propTypes = {
-  id: PropTypes.object,
-}
