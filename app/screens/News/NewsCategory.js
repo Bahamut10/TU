@@ -1,5 +1,6 @@
 /** LIBRARIES */
 import React, { memo } from "react";
+import PropTypes from "prop-types";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -52,5 +53,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
+
+NewsCategory.propTypes = {
+  item: PropTypes.object,
+}
 
 export default memo(NewsCategory, areEqual);

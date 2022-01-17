@@ -1,5 +1,6 @@
 /** LIBRARIES */
 import React, { useCallback } from "react";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { View, FlatList, StyleSheet, RefreshControl } from "react-native";
 
@@ -80,5 +81,9 @@ const styles = StyleSheet.create({
     height: 45,
   },
 });
+
+NewsList.propTypes = {
+  navigation: PropTypes.object,
+}
 
 export default NewsList;

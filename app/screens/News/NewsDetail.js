@@ -6,6 +6,7 @@ import {
   useWindowDimensions,
   Image,
 } from "react-native";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import HTML from "react-native-render-html";
 
@@ -71,5 +72,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
+NewsDetail.propTypes = {
+  route: PropTypes.object
+}
 
 export default NewsDetail;

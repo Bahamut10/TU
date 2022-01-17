@@ -1,5 +1,6 @@
 /** LIBRARIES */
 import React, { memo } from "react";
+import PropTypes from "prop-types";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 /** COMPONENTS / SCREENS */
@@ -45,5 +46,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+NewsItem.propTypes = {
+  navigation: PropTypes.object,
+  item: PropTypes.object,
+}
 
 export default memo(NewsItem, areEqual);

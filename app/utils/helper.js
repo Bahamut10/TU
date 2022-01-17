@@ -85,6 +85,6 @@ export const formatToShortDate = (sourceDate) => {
 /** TO ALERT BASED ON PASSED TITLE & MESSAGE */
 export const alert = (title, message) => {
   Alert.alert(title, message, [
-    { text: "OK", onPress: () => console.log("OK Pressed") },
+    { text: "OK", onPress: () => {} },
   ]);
 };
